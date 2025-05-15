@@ -28,6 +28,10 @@ module.exports = (...args) => {
         "test-error",
         "test-async-error",
         "test-utils",
+        "downloadbuff",
+        "downloadbuffsave",
+        "downloadfile",
+        "downloadfilesave",
       ]);
 
       POST["testjson"] = async (...args) => {
@@ -363,6 +367,66 @@ module.exports = (...args) => {
           response.err.error = errhandler(error);
         } finally {
           return response;
+        }
+      };
+
+      GET["downloadbuff"] = (...args) => {
+        let [request, response] = args;
+        try {
+          let { download } = response.render.options;
+          download.content = readFileSync(
+            "/home/vsrndt02h01/Downloads/mac_studio_m2ultra_ubuntu.pdf"
+          );
+          download.filename = "abc.pdf";
+
+          return response;
+        } catch (error) {
+          return error;
+        }
+      };
+
+      GET["downloadbuffsave"] = (...args) => {
+        let [request, response] = args;
+        try {
+          let { download } = response.render.options;
+          download.content = readFileSync(
+            "/home/vsrndt02h01/Downloads/mac_studio_m2ultra_ubuntu.pdf"
+          );
+          download.filename = "abc.pdf";
+          download.save = true;
+
+          return response;
+        } catch (error) {
+          return error;
+        }
+      };
+
+      GET["downloadfile"] = (...args) => {
+        let [request, response] = args;
+        try {
+          let { download } = response.render.options;
+          download.content =
+            "/home/vsrndt02h01/Downloads/mac_studio_m2ultra_ubuntu.pdf";
+          download.filename = "abc.pdf";
+
+          return response;
+        } catch (error) {
+          return error;
+        }
+      };
+
+      GET["downloadfilesave"] = (...args) => {
+        let [request, response] = args;
+        try {
+          let { download } = response.render.options;
+          download.content =
+            "/home/vsrndt02h01/Downloads/mac_studio_m2ultra_ubuntu.pdf";
+          download.filename = "abc.pdf";
+          download.save = true;
+
+          return response;
+        } catch (error) {
+          return error;
         }
       };
 

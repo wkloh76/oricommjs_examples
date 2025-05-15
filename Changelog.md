@@ -9,10 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Summary
 
-- Work with framework OriCommJS ^1.1.7 and oricommjs components engine.
+- Work with framework OriCommJS ^1.2.0 and oricommjs components engine.
 
 ### Added
-
+- Add download sample to testapi. Completed on 2025-05-15 
 ### Changed
 
 ### Deprecated
