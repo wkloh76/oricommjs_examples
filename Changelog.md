@@ -12,8 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Work with framework OriCommJS ^1.2.0 and oricommjs components engine.
 
 ### Added
-- Add download sample to testapi. Completed on 2025-05-15 
+
+- Add download sample to testapi. Completed on 2025-05-15
+
 ### Changed
+
+- Update download sample which will apply content-type checking. Completed on 2025-05-15
 
 ### Deprecated
 

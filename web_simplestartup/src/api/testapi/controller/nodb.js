@@ -378,6 +378,7 @@ module.exports = (...args) => {
             "/home/vsrndt02h01/Downloads/mac_studio_m2ultra_ubuntu.pdf"
           );
           download.filename = "abc.pdf";
+          download.ctype = "pdf";
 
           return response;
         } catch (error) {
@@ -394,6 +395,7 @@ module.exports = (...args) => {
           );
           download.filename = "abc.pdf";
           download.save = true;
+          download.ctype = "pdf";
 
           return response;
         } catch (error) {
