@@ -63,6 +63,73 @@ export default await (() => {
       }
     };
 
+    lib.action_lcfile = (...args) => {
+      const [param] = args;
+      const { utils } = library;
+      const { handler } = utils;
+
+      try {
+        let collection = handler.fmtseries;
+        collection.workflow = [
+          {
+            name: "acceptance",
+            func: "clgeneral.dorequired",
+            param: [[param]],
+            pull: [["shared.required"]],
+            push: [["collection.acceptance"]],
+          },
+        ];
+
+        let logicflow = handler.fmtseries;
+        logicflow.workflow = [
+          {
+            name: "openpdf_local",
+            func: "lftest.openpdf_local",
+            pull: [["collection.acceptance"]],
+          },
+        ];
+
+        return [[collection, logicflow]];
+      } catch (error) {
+        console.log(error);
+        return;
+      }
+    };
+
+    lib.action_memfile = (...args) => {
+      const [param] = args;
+      const { utils } = library;
+      const { handler } = utils;
+      const { fmtseries } = handler;
+      let input = fmtseries;
+
+      try {
+        let collection = handler.fmtseries;
+        collection.workflow = [
+          {
+            name: "acceptance",
+            func: "clgeneral.dorequired",
+            param: [[param]],
+            pull: [["shared.required"]],
+            push: [["collection.acceptance"]],
+          },
+        ];
+
+        let logicflow = handler.fmtseries;
+        logicflow.workflow = [
+          {
+            name: "openpdf_memory",
+            func: "lftest.openpdf_memory",
+            pull: [["collection.acceptance"]],
+          },
+        ];
+
+        return [[collection, logicflow]];
+      } catch (error) {
+        console.log(error);
+        return;
+      }
+    };
     return lib;
   } catch (error) {
     return error;

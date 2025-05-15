@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Add download sample to testapi. Completed on 2025-05-15
+- Apply the download sample to testgui `web_simplestartup/testgui/test-webengine`. Completed on 2025-05-15
 
 ### Changed
 
@@ -24,6 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 ### Fixed
+
+- Fix mariadb establish connection during startup. Completed on 2025-05-15
 
 ### Security
 

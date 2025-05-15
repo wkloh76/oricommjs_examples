@@ -12,6 +12,7 @@ module.exports = (...args) => {
     const { handler, concatobj, errhandler, diskstore } = utils;
     const { path } = sys;
     const { join } = path;
+    const { readFileSync } = sys.fs;
 
     try {
       let lib = handler.restfulapi;
@@ -374,9 +375,7 @@ module.exports = (...args) => {
         let [request, response] = args;
         try {
           let { download } = response.render.options;
-          download.content = readFileSync(
-            "/home/vsrndt02h01/Downloads/mac_studio_m2ultra_ubuntu.pdf"
-          );
+          download.content = readFileSync(join(pathname, "sample.pdf"));
           download.filename = "abc.pdf";
           download.ctype = "pdf";
 
@@ -390,9 +389,7 @@ module.exports = (...args) => {
         let [request, response] = args;
         try {
           let { download } = response.render.options;
-          download.content = readFileSync(
-            "/home/vsrndt02h01/Downloads/mac_studio_m2ultra_ubuntu.pdf"
-          );
+          download.content = readFileSync(jjoin(pathname, "sample.pdf"));
           download.filename = "abc.pdf";
           download.save = true;
           download.ctype = "pdf";
@@ -407,8 +404,7 @@ module.exports = (...args) => {
         let [request, response] = args;
         try {
           let { download } = response.render.options;
-          download.content =
-            "/home/vsrndt02h01/Downloads/mac_studio_m2ultra_ubuntu.pdf";
+          download.content = join(pathname, "sample.pdf");
           download.filename = "abc.pdf";
 
           return response;
@@ -421,8 +417,7 @@ module.exports = (...args) => {
         let [request, response] = args;
         try {
           let { download } = response.render.options;
-          download.content =
-            "/home/vsrndt02h01/Downloads/mac_studio_m2ultra_ubuntu.pdf";
+          download.content = join(pathname, "sample.pdf");
           download.filename = "abc.pdf";
           download.save = true;
 

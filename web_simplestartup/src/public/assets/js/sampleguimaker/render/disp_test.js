@@ -33,7 +33,7 @@ export default await (() => {
       const { utils } = library;
       const { handler } = utils;
       let output = handler.dataformat;
-      alert(data);
+      alert("data");
       return output;
     };
 

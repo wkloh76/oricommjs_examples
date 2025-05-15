@@ -75,7 +75,7 @@ success.layout = { type = "basic", pattern = "%d %p %c %X{user} %m%n" }
 
 [debug.sqlite3.db]
 device = { path = "", type = "file", backup = "" }
-testfile = { path = "", type = "memory", backup = "" }
+testfile = { path = "./", type = "memory", backup = "" }
 
 [debug.mariadb]
 

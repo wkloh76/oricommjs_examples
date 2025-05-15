@@ -23,6 +23,11 @@ export default await (() => {
         await helper(event);
       };
 
+      lib.fire = async (event) => {
+        event.preventDefault();
+        await helper(event);
+      };
+
       resolve(lib);
     } catch (error) {
       reject(error);

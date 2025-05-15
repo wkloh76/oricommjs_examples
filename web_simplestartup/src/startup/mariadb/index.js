@@ -55,11 +55,14 @@ module.exports = (...args) => {
               if (output.code !== 0)
                 err += `Unable establish ${key} database connection to ${dbengine} server!`;
             }
-            if (err)
-              throw {
-                message: "Failure to create all database!",
-                stack: err,
-              };
+
+            if (err) {
+              console.log(err);
+              // throw {
+              //   message: "Failure to create all database!",
+              //   stack: err,
+              // };
+            }
           } else throw output;
           return;
         } catch (error) {

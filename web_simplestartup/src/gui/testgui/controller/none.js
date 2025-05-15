@@ -117,6 +117,7 @@ module.exports = (...args) => {
           render.view = `${pathname}/index.html`;
           layer.layouts = path.join(commonviews, "sample.html");
           options.params = {
+            atomic: "/atomic",
             title: "Test Graphic User Interface",
             remotely: cdn,
             locally: `/${compname}`,
@@ -125,12 +126,15 @@ module.exports = (...args) => {
           childs.path = path.join(commonviews, "sample");
           childs.excluded = ["header.html", "prescript.html", "script.html"];
 
+          mjs.atomic.push("/atom/smfetch/smfetch.js");
+          mjs.atomic.push("/atom/guimaker/guimaker.js");
+
           css.remotely.push("/npm/uikit@3.18.3/dist/css/uikit-rtl.min.css");
           js.remotely.push("/npm/uikit@3.18.3/dist/js/uikit.min.js");
           js.remotely.push("/npm/uikit@3.18.3/dist/js/uikit-icons.min.js");
 
-          js.locally.push("/public/assets/js/model/sample.js");
-          mjs.initialize["sample.init"] = [[layer.params.title]];
+          // js.locally.push("/public/assets/js/model/sample.js");
+          mjs.initialize["sample.init"] = [[options.params.title]];
           less.engine.remotely = "/npm/less@4.2.0/dist/less.min.js";
           less.style.locally = ["/less/plugin/wi.less"];
 
@@ -148,8 +152,16 @@ module.exports = (...args) => {
           webengine.trigger = {
             "mouse.click": {
               "#testclick": {
-                evt: "click_testclick",
+                evt: "click.click_testclick",
                 attr: { func: "action_testclick" },
+              },
+              "#lcfile": {
+                evt: "click.fire",
+                attr: { func: "action_lcfile" },
+              },
+              "#memfile": {
+                evt: "click.fire",
+                attr: { func: "action_memfile" },
               },
             },
           };
