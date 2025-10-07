@@ -1,7 +1,8 @@
 # OriCommJS_Examples
 
 ![Static Badge](https://img.shields.io/badge/License-MIT-_)
-![Static Badge](https://img.shields.io/badge/Framework-OriCommJS_1.1.8-_)
+![Static Badge](https://img.shields.io/badge/Framework-OriCommJS_1.2.3-_)
+![Static Badge](https://img.shields.io/badge/Framework-OriCommJS_v2_1.0.6-_)
 ![GitHub Release](https://img.shields.io/github/v/release/wkloh76/oricommjs_components)
 
 This code examples for oricommjs components which will work close with oricommjs engine, utils and atomic modules. 

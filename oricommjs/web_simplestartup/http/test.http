@@ -1,0 +1,16 @@
+### test mariadb sqlmanager
+GET  http://localhost:3000/web_test/testapi/test-sqltemplate-select HTTP/1.1
+Content-type: application/json
+
+{
+    "username1":"adad"
+}
+
+
+### test mariadb db
+GET  http://localhost:3000/web_test/testapi/test-mariadb HTTP/1.1
+Content-type: application/json
+
+{
+    "username1":"adad"
+}

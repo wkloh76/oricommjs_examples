@@ -1,0 +1,25 @@
+@host=localhost
+@port=3000
+@comp=web_sqlite
+@controller=sqlite
+
+
+### Try get select all data from animals table
+GET http://{{host}}:{{port}}/{{comp}}/{{controller}}/general/selectall HTTP/1.1
+
+
+### Try get select data from animals table search by name
+GET http://{{host}}:{{port}}/{{comp}}/{{controller}}/general/select?name=Panthera%20tigris%20tigris HTTP/1.1
+
+
+
+### Try get select data from animals table search by name
+GET http://{{host}}:{{port}}/{{comp}}/{{controller}}/template/select?class=Mammalia HTTP/1.1
+
+
+### Try get updte data from animals table search by name
+GET http://{{host}}:{{port}}/{{comp}}/{{controller}}/template/update?class=Mammalia HTTP/1.1
+
+### Try get insert new data to animals table
+GET http://{{host}}:{{port}}/{{comp}}/{{controller}}/template/insert HTTP/1.1
+
