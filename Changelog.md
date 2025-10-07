@@ -30,4 +30,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
-[1.1.5]: https://github.com/wkloh76/oricommjs_components/releases/tag/1.1.5
+[1.0.0]: https://github.com/wkloh76/oricommjs_examples/releases/tag/1.0.0
