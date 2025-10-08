@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Create 2 new examples for oricommjs_v2 framework and keep to oricommjs_v2 folder. It teach how to access, update and entry data to database. It support sqlite3 local database and MariDB database server. Completed on 2025-10-07
 - Create rules example as midleware to handle sqlite connection. Completed on 2025-10-07
+- Create rules example as midleware to handle mariadb connection. Completed on 2025-10-08
 
 ### Changed
 
