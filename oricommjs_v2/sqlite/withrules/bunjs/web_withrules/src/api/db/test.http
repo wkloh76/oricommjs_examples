@@ -1,0 +1,13 @@
+@host=localhost
+@port=3000
+@comp=web_withrules
+
+@controller=db
+
+
+### Try get select all data from animals table
+GET http://{{host}}:{{port}}/{{comp}}/{{controller}}/notrans/selectall HTTP/1.1
+
+
+### Try get select data from animals table search by name
+GET http://{{host}}:{{port}}/{{comp}}/{{controller}}/notrans/select?name=Panthera%20tigris%20tigris HTTP/1.1

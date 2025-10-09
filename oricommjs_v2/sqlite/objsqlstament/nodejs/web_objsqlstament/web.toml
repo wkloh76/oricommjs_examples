@@ -1,0 +1,34 @@
+[webnodehonojs]
+[webnodehonojs.parser]
+maxSize= 10240000 # 10MB
+
+[webnodehonojs.session]
+encryptionKey = "string_at_least_32_characters_long"
+expireAfterSeconds= 900 #// Expire session after 15 minutes of inactivity,  86400 is 1 day
+#// Recommended for basic CSRF protection in modern browsers
+#// Required for this library to work properly
+#// Recommended to avoid XSS attacks
+cookieOptions= {sameSite= 'Lax', path= '/', httpOnly= true}
+store = { path = "./cache/session"}
+savestore = true
+
+[production]
+defaulturl = ""
+remote = { cdn = ""}
+
+[debug]
+defaulturl = ""
+remote = { cdn = ""}
+
+[debug.sqlite3]
+
+[debug.sqlite3.log]
+type = "dateFile"
+keepFileExt = true
+maxLogSize = "50M"
+numBackups = 10
+success.layout = { type = "basic", pattern = "%d %p %c %X{user} %m%n" }
+
+[debug.sqlite3.db]
+[debug.sqlite3.db.groupname]
+sample = { path = "./cache/db", type = "file", symlink = true }

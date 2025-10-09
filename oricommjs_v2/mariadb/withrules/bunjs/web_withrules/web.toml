@@ -1,0 +1,33 @@
+[webbunjs]
+[webbunjs.parser]
+maxSize= 10240000 # 10MB
+
+[webbunjs.session]
+encryptionKey = "string_at_least_32_characters_long"
+expireAfterSeconds= 900 #// Expire session after 15 minutes of inactivity,  86400 is 1 day
+#// Recommended for basic CSRF protection in modern browsers
+#// Required for this library to work properly
+#// Recommended to avoid XSS attacks
+cookieOptions= {sameSite= 'Lax', path= '/', httpOnly= true}
+store = { path = "./cache/session"}
+savestore = true
+
+[production]
+defaulturl = ""
+remote = { cdn = ""}
+
+[debug]
+defaulturl = ""
+remote = { cdn = ""}
+
+[debug.mariadb]
+[debug.mariadb.log]
+type = "dateFile"
+keepFileExt = true
+maxLogSize = "50M"
+numBackups = 10
+success.layout = { type = "basic", pattern = "%d %p %c %X{user} %m%n" }
+
+[debug.mariadb.db]
+[debug.mariadb.db.group]
+mysample = { path = "./cache/db", port = 3306, host = "127.0.0.1", user = "root", password = "systemadmin", database = "", waitForConnections = true, connectionLimit = 10, queueLimit = 0, pool = false, symlink = true  }

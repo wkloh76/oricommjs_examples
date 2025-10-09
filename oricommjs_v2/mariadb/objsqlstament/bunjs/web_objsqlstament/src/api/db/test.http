@@ -1,0 +1,15 @@
+@host=localhost
+@port=3000
+@comp=web_objsqlstament
+@controller=db
+
+### Try get select data from animals table search by name
+GET http://{{host}}:{{port}}/{{comp}}/{{controller}}/notrans/select?class=Mammalia HTTP/1.1
+
+
+### Try get updte data from animals table search by name
+GET http://{{host}}:{{port}}/{{comp}}/{{controller}}/notrans/update?class=Mammalia HTTP/1.1
+
+### Try get insert new data to animals table
+GET http://{{host}}:{{port}}/{{comp}}/{{controller}}/notrans/insert HTTP/1.1
+

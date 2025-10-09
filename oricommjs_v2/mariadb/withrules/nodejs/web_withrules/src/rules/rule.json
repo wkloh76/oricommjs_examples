@@ -1,0 +1,3 @@
+{
+  "YS_mariadb": "start_mariadb:close_mariadb"
+}
