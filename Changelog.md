@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Oricommjs example move to oricommjs folder. Completed on 2025-10-07
 - Reorganize the example structure. Completed on 2025-10-09
+- Update mariadb all web.toml setting. Completed on 2025-10-10
 
 ### Deprecated
 
