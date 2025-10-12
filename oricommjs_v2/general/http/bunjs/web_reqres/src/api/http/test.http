@@ -1,8 +1,0 @@
-@host=localhost
-@port=3000
-@comp=web_reqres
-@controller=http
-
-### Try get build form format
-GET http://{{host}}:{{port}}/{{comp}}/{{controller}}/response/json HTTP/1.1
-
