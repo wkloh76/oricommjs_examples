@@ -1,0 +1,18 @@
+{
+  "welcome": {
+    "params": [
+      {
+        "title": "Welcome Web Page - Real Images Page",
+        "assets": "/{{0}}/public/assets",
+        "atomic": "/atomic",
+        "locally": "/{{0}}"
+      },
+      {
+        "title": "Fun World Portal",
+        "assets": "/{{0}}/public/assets",
+        "atomic": "/atomic",
+        "locally": "/{{0}}"
+      }
+    ]
+  }
+}

@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Create rules example as midleware to handle sqlite connection. Completed on 2025-10-07
 - Create rules example as midleware to handle mariadb connection. Completed on 2025-10-08
 - Create pool connection example for mariadb. Completed on 2025-10-10
+- Create webpage example for webbunjs engine not yet done. Update on 2025-10-20
 
 ### Changed
 

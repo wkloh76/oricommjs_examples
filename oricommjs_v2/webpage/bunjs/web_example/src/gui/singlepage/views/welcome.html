@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Web Page - Real Images</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Soft gradient background */
+            color: #2c3e50;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #2980b9;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            padding: 20px 0;
+        }
+
+        .image-link {
+            flex: 0 1 250px; /* Flexible item, max width ~250px */
+            text-decoration: none;
+            display: block;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.2s ease; /* Added filter transition */
+            position: relative;
+            background: white; /* Background for the card */
+            border: 1px solid #eee;
+        }
+
+        .image-link:hover {
+            transform: translateY(-8px) scale(1.02); /* Lift and slight scale on hover */
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+            filter: brightness(1.05) saturate(1.1); /* Slightly brighter and more saturated */
+        }
+
+        .image-link img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover; /* Crop image to fill space */
+            display: block;
+            transition: transform 0.4s ease; /* Smooth zoom transition */
+        }
+
+        .image-link:hover img {
+            transform: scale(1.08); /* Zoom image slightly on hover */
+        }
+
+        .image-caption {
+            padding: 15px 10px;
+            background: linear-gradient(to right, #3498db, #2980b9); /* Gradient background for caption */
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Fun animation for the grid items when the page loads */
+        .image-link {
+            animation: fadeInSlideUp 0.5s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .image-link:nth-child(1) { animation-delay: 0.1s; }
+        .image-link:nth-child(2) { animation-delay: 0.2s; }
+        .image-link:nth-child(3) { animation-delay: 0.3s; }
+        .image-link:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInSlideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Our Site! 🌍</h1>
+        <p>Explore different topics by clicking on the real images below. These images are sourced from Unsplash and are free to use.</p>
+
+        <div class="image-grid">
+            <!-- Image Link 1 - Nature -->
+            <a href="https://www.example.com/nature.html" class="image-link" target="_blank">
+                <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&q=80" alt="Beautiful Mountain Landscape">
+                <div class="image-caption">Nature</div>
+            </a>
+
+            <!-- Image Link 2 - City -->
+            <a href="https://www.example.com/cities.html" class="image-link" target="_blank">
+                <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&q=80" alt="City Skyline at Dusk">
+                <div class="image-caption">Cities</div>
+            </a>
+
+            <!-- Image Link 3 - Food -->
+            <a href="https://www.example.com/food.html" class="image-link" target="_blank">
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&q=80" alt="Delicious Italian Pasta">
+                <div class="image-caption">Food</div>
+            </a>
+
+            <!-- Image Link 4 - People -->
+            <a href="https://www.example.com/people.html" class="image-link" target="_blank">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&q=80" alt="Group of Friends Laughing">
+                <div class="image-caption">People</div>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>All images are from Unsplash, free for commercial and noncommercial use.</p>
+    </footer>
+</body>
+</html>
