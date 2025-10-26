@@ -1,0 +1,50 @@
+[deskelectronjs]
+
+[deskelectronjs.updater]
+silent = true
+cyclecheck = 3600
+delay = 5
+systemd = "user"
+auth = ""
+
+#auth = "Basic dnNybmRzeXN0ZW06c3lzdGVtYWRtaW4="
+[deskelectronjs.session]
+encryptionKey = "string_at_least_32_characters_long"
+expireAfterSeconds = 900 #// Expire session after 15 minutes of inactivity,  86400 is 1 day
+cookieOptions = { sameSite = 'Lax', path = '/', httpOnly = true, domain = "127.0.0.1", name = "session" }
+store = { path = "./cache/session" }
+savestore = true
+
+[deskelectronjs.window]
+title = ""
+icon = "link.png"
+toolbar = true
+frame = true
+width = 1280
+height = 720
+fullscreen = false
+resizetomonitor = false
+resizemonitorwidth = 50
+resizemonitorheight = 100
+resizable = true
+min_width = 800
+min_height = 640
+max_width = 1366
+max_height = 2160
+openDevTools = true
+position = "center"
+autoHideMenuBar = false
+useContentSize = true
+nodeIntegration = false
+contextIsolation = true
+webSecurity = true
+enableRemoteModule = false
+show = true
+
+[production]
+defaulturl = "/desktop_example/externalfile/page/welcome?pageno=1"
+remote = { cdn = "" }
+
+[debug]
+defaulturl = "/desktop_example/externalfile/page/welcome?pageno=1"
+remote = { cdn = "" }
