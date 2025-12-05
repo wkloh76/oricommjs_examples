@@ -8,7 +8,8 @@ module.exports = (...args) => {
     const [params, obj, optional] = args;
     const [pathname, curdir, compname] = params;
     const [library, sys, cosetting] = obj;
-    const { atomic, components, dir, utils } = library;
+    const { atomic, engine, components, dir, utils } = library;
+    const { assist } = engine.compmgr;
     const { handler, concatobj, errhandler, mergeDeep } = utils;
     const { join } = sys.path;
     const { ongoing } = cosetting;
@@ -28,7 +29,15 @@ module.exports = (...args) => {
           let { options } = render;
           let { css, js, layer, less, mjs, injectionjs } = options;
           let { childs } = layer;
-          let webengine = handler.webengine;
+          
+          options.params = {
+            atomic: "/atomic",
+          };
+
+          mjs.atomic = [
+            "/atom/smfetch/smfetch.js",
+            "/atom/guimaker/guimaker.js",
+          ];
 
           layer.layouts = "";
 

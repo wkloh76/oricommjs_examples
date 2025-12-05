@@ -24,8 +24,9 @@ module.exports = (...args) => {
           let output = handler.dataformat;
           try {
             let { render } = response;
+            let prm = handler.getprm(request);
             if (!request.session.name) request.session.name = "wkloh";
-            render.options["json"] = { data: "hello word" };
+            render.options["json"] = { data: "hello word", prm };
           } catch (error) {
             response.err.error = error.message;
           } finally {
