@@ -27,6 +27,7 @@ export default (() => {
 
     lib.hh = async () => {
       try {
+        // let { default: df, ...other } = utils;
         let { default: df, ...other } = await import("/library/utils.js");
         let utils = { ...df(), jptr: other.jptr(), handler: other.handler() };
         let { datatype, handler, jptr } = utils;
@@ -89,6 +90,41 @@ export default (() => {
       } catch (error) {
         alert(error);
       }
+    };
+
+    lib.test = async () => {
+      let opt = {
+        url: "/desktop_example/http/response/json",
+        async: false,
+        ajax: false,
+        data: { name: "wkloh", age: 11 },
+        method: "GET",
+      };
+
+      let output = await glib.atomic.smfetch.request(opt);
+      // 调用预加载脚本暴露的方法
+      // const myObject = {
+      //   a: 1,
+      //   b: "hello",
+      //   c: [1, 2, 3],
+      //   d: { nested: "value" },
+      // };
+
+      // const myParam = {welcome:"some string"};
+
+      //  let response = await window.fetchapi.request(
+      //       myObject,
+      //       myParam
+      //     );
+
+      // window.electronAPI.processObject(myObject, myParam)
+      //   .then((result) => {
+      //     console.log("Result from preload:", result);
+      //   })
+      //   .catch((error) => {
+      //     console.error("Error calling processObject:", error);
+      //   });
+      console.log(output);
     };
 
     return lib;
