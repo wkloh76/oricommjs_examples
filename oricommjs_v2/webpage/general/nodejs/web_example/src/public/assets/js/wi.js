@@ -30,10 +30,30 @@ export default (() => {
         // let { default: df, ...other } = utils;
         let { default: df, ...other } = await import("/library/utils.js");
         let utils = { ...df(), jptr: other.jptr(), handler: other.handler() };
-        let { datatype, handler, jptr } = utils;
+        let { datatype, handler, jptr, pick_arrayobj2list, pick_arrayofobj } =
+          utils;
         let om = otherModule();
+        let dd = [
+          { code: 1, msg: "1", data: null },
+          { code: 2, msg: "2", data: null },
+          { code: 3, msg: "3", data: null },
+          { code: 4, msg: "4", data: null },
+        ];
+
         let testdata = { family: { name: "Alice", gender: "female" } };
         const key = "my key";
+
+        om.test(
+          `'pick_arrayobj2list' value is ${JSON.stringify(
+            pick_arrayobj2list(dd, ["code", "msg"])
+          )}`
+        );
+
+         om.test(
+          `'pick_arrayofobj' value is ${JSON.stringify(
+            pick_arrayofobj(dd, "code msg".split(" "))
+          )}`
+        );
 
         om.test(
           `'handler.dataformat' provide dataformt is  ${JSON.stringify(

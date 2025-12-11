@@ -8,8 +8,9 @@ module.exports = (...args) => {
     const [params, obj, optional] = args;
     const [pathname, curdir, compname] = params;
     const [library, sys, cosetting] = obj;
-    const { atomic, components, dir, utils } = library;
-    const { handler, html, concatobj, errhandler, mergeDeep } = utils;
+    const { atomic, engine, components, dir, utils } = library;
+    const { assist } = engine.compmgr;
+    const { handler, concatobj, errhandler, mergeDeep } = utils;
     const { fs, path } = sys;
     const { ongoing } = cosetting;
     const { remote } = ongoing[compname];
@@ -36,7 +37,7 @@ module.exports = (...args) => {
           let prm = handler.getprm(request);
 
           options.params = JSON.parse(
-            html.str_inject(
+            assist.str_inject(
               JSON.stringify(pagedata.welcome.params[prm.pageno - 1]),
               [compname]
             )
