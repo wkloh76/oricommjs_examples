@@ -6,72 +6,22 @@
  */
 
 export default await (() => {
-  let library, sys, interfaces, atom;
   return new Promise(async (resolve, reject) => {
+    const { atomic, utils } = library;
+    const { interfaces } = atomic.guimaker;
+    const { errhandler, handler } = utils;
     try {
-      let lib = {
-        load: (...args) => {
-          const [obj, opt] = args;
-          const [kernel, sysmodule, interfacing] = obj;
-          library = kernel;
-          sys = sysmodule;
-          interfaces = interfacing;
-          atom = opt;
-        },
-      };
+      let lib = {};
 
-      lib.showhide = (...args) => {
-        const [showid, hideid, animate] = args;
-        const { utils } = library;
-        const { handler } = utils;
+      lib.div_system = (...args) => {
+        const [data] = args;
         let rtn = handler.dataformat;
         try {
-          let show = document.querySelector(showid);
-          let hide = document.querySelector(hideid);
-          let loginbox = document.querySelector(".login-modal");
-          let lastClass = loginbox.classList[loginbox.classList.length - 1];
-
-          show.hidden = false;
-          hide.hidden = true;
-
-          if (loginbox.classList.length > 2) {
-            loginbox.classList.remove(lastClass);
-          }
-          loginbox.classList.add(animate);
+          document.querySelector(data).outerHTML += " Update by wkloh!";
+        } catch (error) {
+          rtn = errhandler(error);
+        } finally {
           return rtn;
-        } catch (e) {
-          rtn.code = -1;
-          rtn.msg = e.toString();
-        }
-      };
-
-      lib.redirect = async (...args) => {
-        const [data, [url, action]] = args;
-        const { utils } = library;
-        const { handler } = utils;
-        const { smfetch } = atom;
-        const { compname } = injectionjs;
-        let rtn = handler.dataformat;
-        try {
-          switch (action) {
-            case "open":
-              window.open(url);
-              break;
-            default:
-              await smfetch.request({
-                url: `/${compname}/externalfile/page/welcome`,
-                method: "GET",
-                async: false,
-                ajax: false,
-                data: { pageno: 2 },
-              });
-              break;
-          }
-
-          return rtn;
-        } catch (e) {
-          rtn.code = -1;
-          rtn.msg = e.toString();
         }
       };
 

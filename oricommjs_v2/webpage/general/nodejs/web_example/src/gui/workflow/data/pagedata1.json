@@ -6,7 +6,24 @@
         "assets": "/{{1}}/public/assets",
         "atomic": "/atomic",
         "locally": "/{{1}}"
-      },      
+      },
+      "layer": {
+        "layouts": "{{3}}",
+        "childs": {
+          "path": "{{4}}"
+        }
+      },
+      "less": {
+        "engine": {
+          "remotely": "/npm/less@4.2.0/dist/less.min.js"
+        },
+        "style": {
+          "locally": [
+            "/less/general.less",
+            "/less/login.less"
+          ]
+        }
+      },
       "mjs": {
         "atomic": [
           "/atom/smfetch/smfetch.js",
