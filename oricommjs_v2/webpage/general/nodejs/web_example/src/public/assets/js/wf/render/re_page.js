@@ -8,7 +8,6 @@
 export default await (() => {
   return new Promise(async (resolve, reject) => {
     const { atomic, utils } = library;
-    const { interfaces } = atomic.guimaker;
     const { errhandler, handler } = utils;
     try {
       let lib = {};

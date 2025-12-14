@@ -7,7 +7,6 @@
 
 export default await (() => {
   const { atomic, utils } = library;
-  const { interfaces } = atomic.guimaker;
   const { handler } = utils;
   try {
     let lib = {};
